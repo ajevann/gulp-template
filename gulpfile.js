@@ -96,6 +96,12 @@ gulp.task('clean:dist', function() {
 // Build Sequences
 // ---------------
 
+gulp.task('serve', function(callback) {
+  runSequence(['sass', 'jslint', 'browserSync', 'watch'],
+    callback
+  )
+});
+
 gulp.task('default', function(callback) {
   runSequence(['sass', 'jslint', 'browserSync', 'watch'],
     callback
